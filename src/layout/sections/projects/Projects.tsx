@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexContainer } from "../../../components/FlexContainer";
-import { Project } from "./work/Project";
+import { Project } from "./project/Project";
 import project from "../../../assets/images/photo.jpg";
 
 const WorkProps = [
@@ -14,7 +14,7 @@ export const Projects = () => {
   return (
     <StyledSectionWorks>
       <SectionTitle>My Project</SectionTitle>
-      <FlexContainer justify={"center"}>
+      <FlexContainer wrap={"wrap"} justify={"space-between"}>
         {WorkProps.map((item, index) => (
           <Project key={index} title={item.title} src={item.src} />
         ))}

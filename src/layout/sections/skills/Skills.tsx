@@ -46,6 +46,6 @@ export const Skills = () => {
 };
 
 const StyledSectionSkills = styled.section`
-  background-color: #aa76b4;
+  /* background-color: #aa76b4; */
   min-height: 100vh;
 `;

@@ -24,6 +24,6 @@ export const Projects = () => {
 };
 
 const StyledSectionWorks = styled.section`
-  background-color: #79c182;
+  /* background-color: #79c182; */
   min-height: 100vh;
 `;

@@ -39,7 +39,7 @@ const SkillContent = [
 
 export const Skills = () => {
   return (
-    <StyledSectionSkills>
+    <StyledSectionSkills id="Skills">
       <Container>
         <SectionTitle>My Skills</SectionTitle>
         <FlexContainer wrap={"wrap"}>

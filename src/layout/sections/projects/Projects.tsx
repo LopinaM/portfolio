@@ -12,7 +12,7 @@ const WorkProps = [
 ];
 export const Projects = () => {
   return (
-    <StyledSectionWorks>
+    <StyledSectionWorks id="Projects">
       <SectionTitle>My Project</SectionTitle>
       <FlexContainer wrap={"wrap"} justify={"space-between"}>
         {WorkProps.map((item, index) => (

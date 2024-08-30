@@ -5,7 +5,7 @@ import { Button } from "../../../components/Button";
 
 export const Contacts = () => {
   return (
-    <StyledContact>
+    <StyledContact id="Contact">
       <SectionTitle>Contact</SectionTitle>
       <StyledForm>
         <StyledInput placeholder={"Your name"} />

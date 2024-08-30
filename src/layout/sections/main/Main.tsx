@@ -7,7 +7,7 @@ import { theme } from "../../../styles/Theme";
 
 export const Main = () => {
   return (
-    <StyledMain>
+    <StyledMain id="Home">
       <Container>
         <FlexContainer align={"center"} justify={"space-between"}>
           <div>

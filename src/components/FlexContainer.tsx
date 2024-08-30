@@ -14,4 +14,5 @@ export const FlexContainer = styled.div<flexContainerPropsType>`
   align-items: ${(props) => props.align || "stretch"};
   flex-wrap: ${(props) => props.wrap || "nowrap"};
   gap: ${(props) => props.gap || "0px"};
+  height: 100%;
 `;

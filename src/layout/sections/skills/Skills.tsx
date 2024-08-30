@@ -4,6 +4,7 @@ import { FlexContainer } from "../../../components/FlexContainer";
 import { Icon } from "../../../components/icon/Icon";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
+import { Container } from "../../../components/Container";
 
 const SkillContent = [
   {
@@ -11,15 +12,19 @@ const SkillContent = [
     title: "HTML",
   },
   {
-    iconId: "code",
+    iconId: "css",
     title: "CSS",
   },
   {
-    iconId: "code",
+    iconId: "react",
     title: "React",
   },
+  // {
+  //   iconId: "JavaScript",
+  //   title: "JavaScript",
+  // },
   {
-    iconId: "code",
+    iconId: "TS",
     title: "TypeScript",
   },
   {
@@ -27,7 +32,7 @@ const SkillContent = [
     title: "TailWind",
   },
   {
-    iconId: "code",
+    iconId: "styled-components",
     title: "Styled-components",
   },
 ];
@@ -35,17 +40,19 @@ const SkillContent = [
 export const Skills = () => {
   return (
     <StyledSectionSkills>
-      <SectionTitle>My Skills</SectionTitle>
-      <FlexContainer wrap={"wrap"} justify={"space-between"}>
-        {SkillContent.map((item, index) => (
-          <Skill key={index} iconId={item.iconId} title={item.title} />
-        ))}
-      </FlexContainer>
+      <Container>
+        <SectionTitle>My Skills</SectionTitle>
+        <FlexContainer wrap={"wrap"}>
+          {SkillContent.map((item, index) => (
+            <Skill key={index} iconId={item.iconId} title={item.title} />
+          ))}
+        </FlexContainer>
+      </Container>
     </StyledSectionSkills>
   );
 };
 
 const StyledSectionSkills = styled.section`
   /* background-color: #aa76b4; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
 `;

@@ -24,6 +24,10 @@ export const GlobalStyle = createGlobalStyle`
 
     a{
         text-decoration: none;
+        color: ${theme.colors.accentBg};
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
     }
 
     ul{
@@ -33,6 +37,8 @@ export const GlobalStyle = createGlobalStyle`
     button{
        background-color: unset;
        border: none; 
+       cursor: pointer;
+
     }
     
     section{
@@ -40,11 +46,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     section:nth-of-type(odd){
-        background-color: ${theme.colors.primaryBg};
+        /* background-color: ${theme.colors.primaryBg}; */
+        background-color: ${theme.colors.secondaryBg};
     }
 
     section:nth-of-type(even){
-        background-color: ${theme.colors.secondaryBg};
+        background-color: ${theme.colors.primaryBg};
+        /* background-color: ${theme.colors.secondaryBg}; */
     }
 
 `;

@@ -4,6 +4,7 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexContainer } from "../../../components/FlexContainer";
 import { Project } from "./project/Project";
 import project from "../../../assets/images/photo.jpg";
+import { Container } from "../../../components/Container";
 
 const WorkProps = [
   { title: "project1", src: project },
@@ -13,17 +14,16 @@ const WorkProps = [
 export const Projects = () => {
   return (
     <StyledSectionWorks id="Projects">
-      <SectionTitle>My Project</SectionTitle>
-      <FlexContainer wrap={"wrap"} justify={"space-between"}>
-        {WorkProps.map((item, index) => (
-          <Project key={index} title={item.title} src={item.src} />
-        ))}
-      </FlexContainer>
+      <Container>
+        <SectionTitle>My Project</SectionTitle>
+        <FlexContainer wrap={"wrap"} justify={"space-between"}>
+          {WorkProps.map((item, index) => (
+            <Project key={index} title={item.title} src={item.src} />
+          ))}
+        </FlexContainer>
+      </Container>
     </StyledSectionWorks>
   );
 };
 
-const StyledSectionWorks = styled.section`
-  /* background-color: #79c182; */
-  min-height: 100vh;
-`;
+const StyledSectionWorks = styled.section``;

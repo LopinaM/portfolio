@@ -2,65 +2,53 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
 import { FlexContainer } from "../../components/FlexContainer";
+import { Container } from "../../components/Container";
+import { theme } from "../../styles/Theme";
 
 const SocialIcon = [
   {
-    iconId: "code",
+    iconId: "instagram",
   },
   {
-    iconId: "code",
+    iconId: "telegram",
   },
   {
-    iconId: "code",
+    iconId: "liked-id",
   },
 ];
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <FlexContainer direction={"row"} align={"center"} gap={"10px"}>
-        {SocialIcon.map((item, index) => (
+      <Container>
+        <FlexContainer direction={"column"} align={"center"} gap={"10px"}>
           <SocialList>
-            <SocialItem>
-              <SocialLink>
-                <Icon key={index} iconId={item.iconId} />
-              </SocialLink>
-            </SocialItem>
+            {SocialIcon.map((item, index) => (
+              <SocialList>
+                <SocialItem>
+                  <SocialLink>
+                    <Icon iconId={item.iconId} />
+                  </SocialLink>
+                </SocialItem>
+              </SocialList>
+            ))}
           </SocialList>
-        ))}
-      </FlexContainer>
-      <Copyright>© 2024 Lopina Maria, All Rights Reserved.</Copyright>
-
-      {/* <SocialList>
-        <FlexContainer direction={"row"} align={"center"} gap={"10px"}>
-          {SocialIcon.map((item, index) => (
-            <SocialItem>
-              <SocialLink>
-                <Icon key={index} iconId={item.iconId} />
-              </SocialLink>
-            </SocialItem>
-          ))}
+          <Copyright>© 2024 Lopina Maria, All Rights Reserved.</Copyright>
         </FlexContainer>
-        <Copyright>© 2024 Lopina Maria, All Rights Reserved.</Copyright>
-      </SocialList> */}
+      </Container>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  background-color: #af98fb;
-  min-height: 10vh;
+  background-color: ${theme.colors.primaryBg};
+  padding: 40px 0px;
 `;
 
 const SocialList = styled.ul`
-  background-color: #fb98f8;
-  max-width: 300px;
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 0 auto;
-  align-items: center;
+  gap: 20px;
+  margin: 30px 0px;
 `;
 
 const SocialItem = styled.li`
@@ -69,8 +57,26 @@ const SocialItem = styled.li`
 
 const SocialLink = styled.a`
   background-color: #a12353;
+  /* width: 35px;
+  height: 35px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 255, 255 0.1); */
+  border-radius: 50%;
+
+  color: ${theme.colors.accentBg};
+
+  &:hover {
+    color: ${theme.colors.font};
+    background-color: ${theme.colors.secondaryBg};
+  }
 `;
 
 const Copyright = styled.small`
-  background-color: #cd4651;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  color: ${theme.colors.font};
 `;

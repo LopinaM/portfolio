@@ -9,18 +9,20 @@ type WorkPropsType = {
 export const Project = (props: WorkPropsType) => {
   return (
     <StyledWork>
-      <Image src={props.src} alt="" />
-      <Title>{props.title}</Title>
-      <div>
+      <ImageWrapper>
+        <Image src={props.src} alt="" />
+      </ImageWrapper>
+
+      <Descriphion>
+        <Title>{props.title}</Title>
         <Link href={"#"}>demo</Link>
         <Link href={"#"}>code</Link>
-      </div>
+      </Descriphion>
     </StyledWork>
   );
 };
 
 const StyledWork = styled.div`
-  background-color: #98fbee;
   max-width: 350px;
   width: 100%;
   display: flex;
@@ -30,22 +32,45 @@ const StyledWork = styled.div`
   margin: 0 auto;
 `;
 
-const Image = styled.img`
-  background-color: #e5fb98;
-  /* width: 100%; */
-  /* height: 100px; */
+const ImageWrapper = styled.div`
+  position: relative;
 
+  &:hover {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0 0.3);
+      backdrop-filter: blur(4px);
+    }
+  }
+`;
+
+const Image = styled.img`
   width: 350px;
   height: 350px;
   object-fit: cover;
+  border-radius: 5px;
 `;
 
 const Title = styled.h3`
-  background-color: #5c9a23;
+  text-align: center;
+  margin-bottom: 15px;
 `;
 
 const Link = styled.a`
-  background-color: #98cdfb;
-  /* display: flex; */
-  /* gap: 5px; */
+  & + a {
+    margin-left: 100px;
+  }
+
+  &:hover {
+    background-color: #5c9a23;
+  }
+`;
+
+const Descriphion = styled.div`
+  text-align: center;
 `;

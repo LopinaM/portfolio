@@ -15,7 +15,7 @@ export const Skill = (props: SkillPropsType) => {
       <FlexContainer direction={"column"} align={"center"}>
         <Wrapper>
           <Icon iconId={props.iconId} />
-          <StyledSkillTitle>{props.title}</StyledSkillTitle>
+          <h3>{props.title}</h3>
         </Wrapper>
       </FlexContainer>
     </StyledSkill>
@@ -25,6 +25,7 @@ export const Skill = (props: SkillPropsType) => {
 const StyledSkill = styled.div`
   width: 220px;
   height: 220px;
+  flex-grow: 1;
   padding: 40px 10px;
 `;
 
@@ -51,8 +52,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const StyledSkillTitle = styled.h3`
-  font-family: "Josefin Sans";
-  font-size: 16px;
-  font-weight: 700;
-`;
+// const StyledSkillTitle = styled.h3`
+//   font-family: "Josefin Sans";
+//   font-size: 16px;
+//   font-weight: 700;
+// `;

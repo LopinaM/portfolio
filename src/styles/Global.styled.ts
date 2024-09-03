@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "./Theme";
+import { font } from "./Common";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -20,6 +21,25 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${theme.colors.font};
     line-height: 1.2;
+
+    min-width: 360px;
+    }
+
+    h2{
+        ${font({
+          weight: 700,
+          Fmax: 36,
+          Fmin: 30,
+        })}
+    }
+
+    h3{
+        ${font({
+          family: "Popins",
+          weight: 700,
+          Fmax: 20,
+          Fmin: 16,
+        })}
     }
 
     a{
@@ -40,9 +60,22 @@ export const GlobalStyle = createGlobalStyle`
        cursor: pointer;
 
     }
-    
+
+    input, textarea{
+        ${font({
+          family: "Poppins" || "sans-serif",
+          weight: 400,
+          Fmax: 20,
+          Fmin: 16,
+        })}
+    }
+ 
     section{
         padding: 100px 0;
+
+        @media ${theme.media.mobile}{
+            padding: 80px 0;
+        }
     }
 
     section:nth-of-type(odd){

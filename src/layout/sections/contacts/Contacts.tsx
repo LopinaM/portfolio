@@ -45,9 +45,9 @@ const Field = styled.input`
   border: 1px solid ${theme.colors.borderColor};
   padding: 7px 15px;
 
-  font-family: Poppins, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
+  /* font-family: Poppins, sans-serif; */
+  /* font-size: 20px; */
+  /* font-weight: 400; */
   letter-spacing: 0.05em;
 
   color: ${theme.colors.font};

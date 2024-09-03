@@ -16,7 +16,12 @@ export const Projects = () => {
     <StyledSectionWorks id="Projects">
       <Container>
         <SectionTitle>My Project</SectionTitle>
-        <FlexContainer wrap={"wrap"} justify={"space-between"}>
+        <FlexContainer
+          wrap={"wrap"}
+          justify={"space-between"}
+          // align={"flex-start"}
+          gap={"30px"}
+        >
           {WorkProps.map((item, index) => (
             <Project key={index} title={item.title} src={item.src} />
           ))}

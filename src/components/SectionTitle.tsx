@@ -3,9 +3,9 @@ import { theme } from "../styles/Theme";
 
 export const SectionTitle = styled.h2`
   text-align: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 36px;
-  font-weight: 600;
+  /* font-family: "Josefin Sans", sans-serif; */
+  /* font-size: 36px; */
+  /* font-weight: 600; */
   letter-spacing: 5px;
   margin-bottom: 70px;
 

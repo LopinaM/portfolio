@@ -31,6 +31,10 @@ const StyledMenu = styled.nav`
     display: flex;
     gap: 30px;
   }
+
+  @media ${theme.media.tablet} {
+    display: none;
+  }
 `;
 
 const Link = styled.a`

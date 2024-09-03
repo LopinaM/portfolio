@@ -37,7 +37,7 @@ export const Skills = () => {
     <StyledSectionSkills id="Skills">
       <Container>
         <SectionTitle>My Skills</SectionTitle>
-        <FlexContainer wrap={"wrap"}>
+        <FlexContainer wrap={"wrap"} justify={"space-between"}>
           {SkillContent.map((item, index) => (
             <Skill key={index} iconId={item.iconId} title={item.title} />
           ))}

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { theme } from "../../../../styles/Theme";
 
 type WorkPropsType = {
   title: string;
@@ -23,19 +24,27 @@ export const Project = (props: WorkPropsType) => {
 };
 
 const StyledWork = styled.div`
-  max-width: 350px;
-  width: 100%;
+  /* background-color: #fff; */
+  /* max-width: 350px; */
+  width: 330px;
+  /* width: 350px; */
+  flex-grow: 1;
+  /* align-items: center; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   margin: 0 auto;
+
+  /* @media ${theme.media.desktop} {
+    max-width: 460px;
+  } */
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
 
-  &:hover {
+  /* &:hover {
     &::before {
       content: "";
       position: absolute;
@@ -46,14 +55,16 @@ const ImageWrapper = styled.div`
       background: rgba(0, 0, 0 0.3);
       backdrop-filter: blur(4px);
     }
-  }
+  } */
 `;
 
 const Image = styled.img`
-  width: 350px;
-  height: 350px;
+  width: 330px;
+  /* width: 100%; */
+  height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  justify-content: center;
 `;
 
 const Title = styled.h3`

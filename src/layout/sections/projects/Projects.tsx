@@ -11,17 +11,12 @@ const WorkProps = [
   { title: "project2", src: project },
   { title: "project3", src: project },
 ];
-export const Projects = () => {
+export const Projects: React.FC = () => {
   return (
     <StyledSectionWorks id="Projects">
       <Container>
         <SectionTitle>My Project</SectionTitle>
-        <FlexContainer
-          wrap={"wrap"}
-          justify={"space-between"}
-          // align={"flex-start"}
-          gap={"30px"}
-        >
+        <FlexContainer wrap={"wrap"} justify={"space-between"} gap={"30px"}>
           {WorkProps.map((item, index) => (
             <Project key={index} title={item.title} src={item.src} />
           ))}

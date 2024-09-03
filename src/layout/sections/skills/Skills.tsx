@@ -5,7 +5,7 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
 
-const SkillContent = [
+const SkillData = [
   {
     iconId: "code",
     title: "HTML",
@@ -32,13 +32,13 @@ const SkillContent = [
   },
 ];
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
   return (
     <StyledSectionSkills id="Skills">
       <Container>
         <SectionTitle>My Skills</SectionTitle>
         <FlexContainer wrap={"wrap"} justify={"space-between"}>
-          {SkillContent.map((item, index) => (
+          {SkillData.map((item, index) => (
             <Skill key={index} iconId={item.iconId} title={item.title} />
           ))}
         </FlexContainer>

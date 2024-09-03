@@ -5,7 +5,7 @@ import { Button } from "../../../components/Button";
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
 
-export const Contacts = () => {
+export const Contacts: React.FC = () => {
   return (
     <StyledContact id="Contact">
       <Container>
@@ -44,10 +44,6 @@ const Field = styled.input`
   background-color: ${theme.colors.secondaryBg};
   border: 1px solid ${theme.colors.borderColor};
   padding: 7px 15px;
-
-  /* font-family: Poppins, sans-serif; */
-  /* font-size: 20px; */
-  /* font-weight: 400; */
   letter-spacing: 0.05em;
 
   color: ${theme.colors.font};

@@ -17,20 +17,23 @@ const SocialIcon = [
   },
 ];
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <Container>
         <FlexContainer direction={"column"} align={"center"} gap={"10px"}>
           <SocialList>
             {SocialIcon.map((item, index) => (
-              <SocialList>
-                <SocialItem>
-                  <SocialLink>
-                    <Icon iconId={item.iconId} />
-                  </SocialLink>
-                </SocialItem>
-              </SocialList>
+              <SocialItem key={index}>
+                <SocialLink>
+                  <Icon
+                    height={"21px"}
+                    width={"21px"}
+                    viewBox={"0 0 21 21"}
+                    iconId={item.iconId}
+                  />
+                </SocialLink>
+              </SocialItem>
             ))}
           </SocialList>
           <Copyright>© 2024 Lopina Maria, All Rights Reserved.</Copyright>

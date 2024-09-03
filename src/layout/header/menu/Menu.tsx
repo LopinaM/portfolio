@@ -1,41 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/Theme";
+import { theme } from "../../../styles/Theme";
 
-export const Menu = (props: { menuItems: Array<string> }) => {
+export const Menu: React.FC<{ menuItems: Array<string> }> = (props: {
+  menuItems: Array<string>;
+}) => {
   return (
-    <StyledMenu>
-      <ul>
-        {props.menuItems.map((item, index) => (
-          <LiStyled key={index}>
-            <Link href={`#${item}`}>
-              {item}
-              <Mask>
-                <span>{item}</span>
-              </Mask>
-              <Mask>
-                <span>{item}</span>
-              </Mask>
-            </Link>
-          </LiStyled>
-        ))}
-      </ul>
-    </StyledMenu>
+    <ul>
+      {props.menuItems.map((item, index) => (
+        <LiStyled key={index}>
+          <Link href={`#${item}`}>
+            {item}
+            <Mask>
+              <span>{item}</span>
+            </Mask>
+            <Mask>
+              <span>{item}</span>
+            </Mask>
+          </Link>
+        </LiStyled>
+      ))}
+    </ul>
   );
 };
-
-const StyledMenu = styled.nav`
-  /* background-color: #ffc0cb; */
-
-  ul {
-    display: flex;
-    gap: 30px;
-  }
-
-  @media ${theme.media.tablet} {
-    display: none;
-  }
-`;
 
 const Link = styled.a`
   font-family: Josefin Sans;
@@ -43,7 +30,6 @@ const Link = styled.a`
   font-weight: 400;
   text-align: center;
   color: transparent;
-  /* color: #7572d5; */
 `;
 
 const Mask = styled.span`

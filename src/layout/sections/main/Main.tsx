@@ -6,7 +6,7 @@ import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
 import { font } from "../../../styles/Common";
 
-export const Main = () => {
+export const Main: React.FC = () => {
   return (
     <StyledMain id="Home">
       <Container>

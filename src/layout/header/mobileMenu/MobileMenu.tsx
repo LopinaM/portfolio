@@ -1,8 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { theme } from "../../styles/Theme";
+import { theme } from "../../../styles/Theme";
+import { Menu } from "../menu/Menu";
 
-export const MobileMenu = (props: { menuItems: Array<string> }) => {
+export const MobileMenu: React.FC<{ menuItems: Array<string> }> = (props: {
+  menuItems: Array<string>;
+}) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const clicked = () => {
@@ -16,33 +19,13 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
       </BurgerButton>
 
       <MobileMenuPopup isOpen={isOpen}>
-        <ul>
-          {props.menuItems.map((item, index) => (
-            <LiStyled key={index}>
-              <Link href={`#${item}`}>
-                {item}
-                <Mask>
-                  <span>{item}</span>
-                </Mask>
-                <Mask>
-                  <span>{item}</span>
-                </Mask>
-              </Link>
-            </LiStyled>
-          ))}
-        </ul>
+        <Menu menuItems={props.menuItems} />
       </MobileMenuPopup>
     </StyledMobileMenu>
   );
 };
 
-const StyledMobileMenu = styled.nav`
-  display: none;
-
-  @media ${theme.media.tablet} {
-    display: block;
-  }
-`;
+const StyledMobileMenu = styled.nav``;
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   position: fixed;
@@ -125,66 +108,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
           width: 36px;
           transform: rotate(45deg) translateY(0px);
         `}
-    }
-  }
-`;
-
-const Link = styled.a`
-  font-family: Josefin Sans;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  color: transparent;
-`;
-
-const Mask = styled.span`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  height: 50%;
-  overflow-y: hidden;
-  color: ${theme.colors.accentBg};
-
-  & + & {
-    top: 50%;
-    span {
-      display: inline-block;
-      transform: translateY(-50%);
-    }
-  }
-`;
-
-const LiStyled = styled.li`
-  position: relative;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    height: 2px;
-    background-color: ${theme.colors.accentBg};
-
-    position: absolute;
-    top: 50%;
-    left: -10px;
-    right: -10px;
-    z-index: 1;
-
-    transform: scale(0);
-  }
-
-  &:hover {
-    &::before {
-      transform: scale(1);
-    }
-
-    ${Mask} {
-      transform: skewX(12deg) translateX(5px);
-      color: ${theme.colors.font};
-
-      & + ${Mask} {
-        transform: skewX(12deg) translateX(-5px);
-      }
     }
   }
 `;

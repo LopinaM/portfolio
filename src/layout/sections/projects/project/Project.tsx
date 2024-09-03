@@ -7,7 +7,7 @@ type WorkPropsType = {
   src: string;
 };
 
-export const Project = (props: WorkPropsType) => {
+export const Project: React.FC<WorkPropsType> = (props: WorkPropsType) => {
   return (
     <StyledWork>
       <ImageWrapper>

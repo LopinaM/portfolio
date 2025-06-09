@@ -12,8 +12,13 @@ export const Button = styled.button`
   text-transform: uppercase;
   width: 200px;
   height: 50px;
+  transition: all 0.5s;
 
   &:hover {
-    background-color: #70487d; //#54191e; //#70487d;
+    background: linear-gradient(135deg, #b388ff, #00f5a0);
+    background-clip: text;
+    -webkit-background-clip: text; /* для Safari */
+    color: transparent;
+    -webkit-text-fill-color: transparent; /* для Safari */
   }
 `;

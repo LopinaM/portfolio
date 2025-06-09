@@ -1,78 +1,77 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../components/icon/Icon";
-import { FlexContainer } from "../../components/FlexContainer";
-import { Container } from "../../components/Container";
 import { theme } from "../../styles/Theme";
 
 const SocialIcon = [
-  {
-    iconId: "instagram",
-  },
-  {
-    iconId: "telegram",
-  },
-  {
-    iconId: "liked-id",
-  },
+  { iconId: "telegram", url: "https://t.me/ls_masha" },
+  { iconId: "githubFooter", url: "https://github.com/LopinaM" },
+  // { iconId: "liked-id", url: "" },
 ];
 
 export const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <Container>
-        <FlexContainer direction={"column"} align={"center"} gap={"10px"}>
-          <SocialList>
-            {SocialIcon.map((item, index) => (
-              <SocialItem key={index}>
-                <SocialLink>
-                  <Icon
-                    height={"21px"}
-                    width={"21px"}
-                    viewBox={"0 0 21 21"}
-                    iconId={item.iconId}
-                  />
-                </SocialLink>
-              </SocialItem>
-            ))}
-          </SocialList>
-          <Copyright>© 2024 Lopina Maria, All Rights Reserved.</Copyright>
-        </FlexContainer>
-      </Container>
+      <Copyright>© Made by Lopina Maria, 2025</Copyright>
+      {/* <Copyright>&&</Copyright> */}
+      <SocialList>
+        {SocialIcon.map((item, index) => (
+          <SocialItem key={index}>
+            <SocialLink
+              href={item.url}
+              target="_blank"
+              // rel="noopener noreferrer"
+            >
+              <Icon
+                height={"21px"}
+                width={"21px"}
+                viewBox={"0 0 21 21"}
+                iconId={item.iconId}
+              />
+            </SocialLink>
+          </SocialItem>
+        ))}
+      </SocialList>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  background-color: ${theme.colors.primaryBg};
-  padding: 40px 0px;
+  max-width: 1170px;
+  width: 100%;
+
+  padding: 10px 0;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
 `;
 
 const SocialList = styled.ul`
   display: flex;
-  gap: 20px;
-  margin: 15px 0px;
+  gap: 10px;
 `;
 
-const SocialItem = styled.li`
-  background-color: #98fba4;
-`;
+const SocialItem = styled.li``;
 
 const SocialLink = styled.a`
-  background-color: #a12353;
-  /* width: 35px;
-  height: 35px; */
+  background-color: #433648;
+  width: 35px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgba(255, 255, 255 0.1); */
+
   border-radius: 50%;
 
-  color: ${theme.colors.accentBg};
+  color: ${theme.colors.font};
 
   &:hover {
-    color: ${theme.colors.font};
-    background-color: ${theme.colors.secondaryBg};
+    background-color: ${theme.colors.accentBg};
   }
 `;
 

@@ -1,29 +1,43 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { theme } from "../../../styles/Theme";
-import { Menu } from "../menu/Menu";
+import { NavLink } from "react-router";
+import { Path } from "../../../components/Routing";
 
-export const MobileMenu: React.FC<{ menuItems: Array<string> }> = (props: {
-  menuItems: Array<string>;
-}) => {
+interface MobileMenuProps {
+  menuItems: Record<string, string>;
+}
+
+export const MobileMenu = ({ menuItems }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const clicked = () => {
+  const onBurgerBtnClick = () => {
     setIsOpen((prev) => !prev);
   };
 
   return (
     <StyledMobileMenu>
-      <BurgerButton isOpen={isOpen} onClick={clicked}>
+      <BurgerButton isOpen={isOpen} onClick={onBurgerBtnClick}>
         <span></span>
       </BurgerButton>
 
-      <MobileMenuPopup isOpen={isOpen}>
-        <Menu menuItems={props.menuItems} />
+      <MobileMenuPopup isOpen={isOpen} onClick={() => setIsOpen(false)}>
+        <WrapperStyled>
+          {Object.entries(menuItems).map(([key, values]) => (
+            <NavLink key={key} to={Path[key as keyof typeof Path]}>
+              {values}
+            </NavLink>
+          ))}
+        </WrapperStyled>
       </MobileMenuPopup>
     </StyledMobileMenu>
   );
 };
+
+const WrapperStyled = styled.div`
+  display: flex;
+  gap: 30px;
+`;
 
 const StyledMobileMenu = styled.nav``;
 
@@ -34,7 +48,8 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   z-index: 10;
-  background-color: rgba(31, 31, 32, 0.9);
+  /* background-color: rgba(31, 31, 32, 0.9); */
+  background-color: ${theme.colors.secondaryBg};
   display: none;
 
   ${(props) =>

@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 
-export const Menu: React.FC<{ menuItems: Array<string> }> = (props: {
+interface MenuProps {
   menuItems: Array<string>;
-}) => {
+}
+
+export const Menu = ({ menuItems }: MenuProps) => {
   return (
     <ul>
-      {props.menuItems.map((item, index) => (
+      {menuItems.map((item, index) => (
         <LiStyled key={index}>
           <Link href={`#${item}`}>
             {item}

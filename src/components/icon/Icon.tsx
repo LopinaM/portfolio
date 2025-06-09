@@ -17,7 +17,10 @@ export const Icon: React.FC<IconPropsType> = (props: IconPropsType) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <use xlinkHref={`${iconsSprite}#${props.iconId}`} />
+      <use
+        xlinkHref={`${iconsSprite}#${props.iconId}`}
+        style={{ transformOrigin: "50% 50%" }}
+      />
     </svg>
   );
 };

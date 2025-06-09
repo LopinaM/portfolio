@@ -1,24 +1,49 @@
 import React from "react";
 import { Header } from "./layout/header/Header";
-import { Main } from "./layout/sections/main/Main";
-import { Skills } from "./layout/sections/skills/Skills";
-import { Projects } from "./layout/sections/projects/Projects";
-import { Contacts } from "./layout/sections/contacts/Contacts";
 import { Footer } from "./layout/footer/Footer";
-import { AboutMe } from "./layout/sections/AboutMe";
+import { Routing } from "./components/Routing";
+import styled from "styled-components";
+import { theme } from "./styles/Theme";
 
-function App() {
+export const App = () => {
   return (
-    <div>
+    <Wrapper>
       <Header />
-      <Main />
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <Contacts />
-      <Footer />
-    </div>
-  );
-}
+      <WrapperContent>
+        <Content>
+          <Routing />
+        </Content>
+      </WrapperContent>
 
-export default App;
+      <Footer />
+    </Wrapper>
+  );
+};
+const Wrapper = styled.div`
+  /* height: 100%; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+`;
+
+const WrapperContent = styled.section`
+  flex-grow: 1;
+  display: flex;
+
+  /* @media ${theme.media.mobile} {
+    padding-top: 20px;
+  } */
+`;
+
+export const Content = styled.div`
+  max-width: 1300px; //1170px; 1400px;
+  width: 100%;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+`;

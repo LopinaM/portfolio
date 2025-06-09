@@ -23,6 +23,9 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.2;
 
     min-width: 360px;
+    background-color: ${theme.colors.secondaryBg};
+
+    /* overflow: hidden; */
     }
 
     h2{
@@ -35,10 +38,11 @@ export const GlobalStyle = createGlobalStyle`
 
     h3{
         ${font({
-          family: "Popins",
+          //   family: "Popins",
+          family: "sans-serif",
           weight: 700,
-          Fmax: 20,
-          Fmin: 16,
+          Fmax: 16,
+          Fmin: 14,
         })}
     }
 
@@ -63,7 +67,7 @@ export const GlobalStyle = createGlobalStyle`
 
     input, textarea{
         ${font({
-          family: "Poppins" || "sans-serif",
+          family: "sans-serif",
           weight: 400,
           Fmax: 20,
           Fmin: 16,
@@ -71,10 +75,10 @@ export const GlobalStyle = createGlobalStyle`
     }
  
     section{
-        padding: 100px 0;
+        /* padding: 100px 0; */
 
         @media ${theme.media.mobile}{
-            padding: 80px 0;
+            padding: 20px 0;
         }
     }
 
@@ -87,5 +91,13 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${theme.colors.primaryBg};
         /* background-color: ${theme.colors.secondaryBg}; */
     }
+
+
+    ::selection {
+    background: ${theme.colors.accentBg};
+    color:  #fff;
+  }
+  
+   
 
 `;

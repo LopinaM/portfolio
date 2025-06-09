@@ -4,7 +4,7 @@ import { theme } from "../styles/Theme";
 export const SectionTitle = styled.h2`
   text-align: center;
   letter-spacing: 5px;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 
   position: relative;
 

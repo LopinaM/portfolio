@@ -8,9 +8,15 @@ export const theme = {
     placeholderColor: "#495057",
   },
 
+  // media: {
+  //   tablet: "screen and (max-width: 768px)",
+  //   mobile: "screen and (max-width: 576px)",
+  //   desktop: "screen and (min-width: 576px)",
+  // },
+
   media: {
-    tablet: "screen and (max-width: 768px)",
-    mobile: "screen and (max-width: 576px)",
-    desktop: "screen and (min-width: 576px)",
+    mobile: "(max-width: 576px)",
+    tablet: "(min-width: 577px) and (max-width: 1023px)",
+    desktop: "(min-width: 1024px)",
   },
 };

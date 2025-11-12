@@ -11,36 +11,36 @@ import portfolio from "../../../assets/images/portfolio.png";
 import { theme } from "../../../styles/Theme";
 
 const WorkData = [
-  {
-    title: "Animation",
-    src: handScan,
-    urlOnCode: "https://github.com/LopinaM/css_hand_scanning_animation",
-    urlOnView: "https://lopinam.github.io/css_hand_scanning_animation/",
-  },
-  {
-    title: "Counter",
-    src: counter1,
-    urlOnCode: "https://github.com/LopinaM/counter",
-    urlOnView: "https://lopinam.github.io/counter/",
-  },
+  // {
+  //   title: "Animation",
+  //   src: handScan,
+  //   urlOnCode: "https://github.com/LopinaM/css_hand_scanning_animation",
+  //   urlOnView: "https://lopinam.github.io/css_hand_scanning_animation/",
+  // },
+  // {
+  //   title: "Counter",
+  //   src: counter1,
+  //   urlOnCode: "https://github.com/LopinaM/counter",
+  //   urlOnView: "https://lopinam.github.io/counter/",
+  // },
   {
     title: "To Do List",
     src: todo,
     urlOnCode: "https://github.com/LopinaM/todolist",
     urlOnView: "https://lopinam.github.io/todolist/",
   },
-  {
-    title: "Counter With RTK",
-    src: counter2,
-    urlOnCode: "https://github.com/LopinaM/counter-with-rtk",
-    urlOnView: "https://lopinam.github.io/counter-with-rtk/",
-  },
-  {
-    title: "Portfolio",
-    src: portfolio,
-    urlOnCode: "https://github.com/LopinaM/portfolio",
-    urlOnView: "",
-  },
+  // {
+  //   title: "Counter With RTK",
+  //   src: counter2,
+  //   urlOnCode: "https://github.com/LopinaM/counter-with-rtk",
+  //   urlOnView: "https://lopinam.github.io/counter-with-rtk/",
+  // },
+  // {
+  //   title: "Portfolio",
+  //   src: portfolio,
+  //   urlOnCode: "https://github.com/LopinaM/portfolio",
+  //   urlOnView: "",
+  // },
   // { title: "project6", src: project, urlOnCode: "", urlOnView: "" },
   // { title: "project7", src: project, urlOnCode: "", urlOnView: "" },
 ];

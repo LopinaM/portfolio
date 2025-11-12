@@ -10,11 +10,11 @@ export const Skills: React.FC = () => {
     <>
       <SectionTitle>My Skills</SectionTitle>
       <WrapperContainer>
-        <FlexContainer>
+        {/* <FlexContainer>
           {SkillData.map((item, index) => (
             <Skill key={index} iconId={item.iconId} />
           ))}
-        </FlexContainer>
+        </FlexContainer> */}
 
         <Container>
           <SkillsContainer>
@@ -104,7 +104,9 @@ const StyledSkill = styled.div`
 const WrapperContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; //space-evenly;
+  /* justify-content: space-evenly; //space-evenly; */
+  justify-content: start;
+  padding-top: 20px;
   gap: 20px;
 
   width: 100%;

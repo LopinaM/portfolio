@@ -44,7 +44,7 @@ export const Header = ({ islaptop = false }: HeaderProps) => {
     <Container $laptop={islaptop}>
       <FlexContainer justify={"space-between"} align={"center"}>
         {!islaptop ? (
-          <Logo>
+          <Logo href="/">
             ML<span>.</span>
           </Logo>
         ) : (
@@ -60,7 +60,7 @@ export const Header = ({ islaptop = false }: HeaderProps) => {
   );
 };
 
-const Logo = styled.div`
+const Logo = styled.a`
   ${font({
     weight: 700,
     Fmax: 36,

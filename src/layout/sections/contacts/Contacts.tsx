@@ -204,6 +204,22 @@ const Field = styled.input`
   &:focus-visible {
     outline: 1px solid ${theme.colors.accentBg};
   }
+
+  /* Стили для автозаполнения */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: ${theme.colors.font} !important;
+    -webkit-box-shadow: 0 0 0px 1000px ${theme.colors.secondaryBg} inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Для Firefox */
+  &:autofill {
+    background-color: ${theme.colors.secondaryBg} !important;
+    color: ${theme.colors.font} !important;
+  }
 `;
 
 const FloatLabelField = styled.div`
